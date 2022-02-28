@@ -1,0 +1,16 @@
+.profile {
+  position: absolute;
+  top: 45px;
+  right: 55px;
+  font-size: 30px;
+
+  &::after {
+    background: url('../assets/profile-icon.svg') no-repeat;
+    height: 50px;
+    width: 50px;
+    content: '';
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 15px;
+  }
+}

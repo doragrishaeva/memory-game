@@ -1,0 +1,26 @@
+.empty-score {
+  margin: 470px auto 0;
+  width: 500px;
+  text-align: center;
+  font-size: 25px;
+  position: relative;
+
+  &::before {
+    content: '';
+    background: url('../assets/empty-score-icon.svg') no-repeat;
+    width: 200px;
+    height: 270px;
+    display: block;
+    position: absolute;
+    top: -330px;
+    left: 130px;
+  }
+}
+
+.empty-score_hidden {
+  display: none;
+}
+
+.empty-score_active {
+  display: block;
+}

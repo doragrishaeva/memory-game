@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Import fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <!-- TODO: add favicon -->
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="scss/style.css">
+  <title>Memory Game</title>
+</head>
+
+<body>
+
+  <!-- main screen -->
+  <div class="main screen">
+    <div class="profile" title="player name"></div>
+
+    <div class="menu">
+      <div class="menu__item">
+        <div class="menu__item-image">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <title />
+            <g id="Play">
+              <path fill="transparent" stroke="black" stroke-width="2"
+                d="M26.78,13.45,11.58,4A3,3,0,0,0,7,6.59V25.41a3,3,0,0,0,3,3A3,3,0,0,0,11.58,28l15.2-9.41a3,3,0,0,0,0-5.1Z" />
+            </g>
+          </svg>
+        </div>
+        <div class="menu__item-button" data-link="play">Play game</div>
+      </div>
+      <div class="menu__item">
+        <div class="menu__item-image">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g>
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path fill="transparent" stroke="black" stroke-width="1.5"
+                d="M2.132 13.63a9.942 9.942 0 0 1 0-3.26c1.102.026 2.092-.502 2.477-1.431.385-.93.058-2.004-.74-2.763a9.942 9.942 0 0 1 2.306-2.307c.76.798 1.834 1.125 2.764.74.93-.385 1.457-1.376 1.43-2.477a9.942 9.942 0 0 1 3.262 0c-.027 1.102.501 2.092 1.43 2.477.93.385 2.004.058 2.763-.74a9.942 9.942 0 0 1 2.307 2.306c-.798.76-1.125 1.834-.74 2.764.385.93 1.376 1.457 2.477 1.43a9.942 9.942 0 0 1 0 3.262c-1.102-.027-2.092.501-2.477 1.43-.385.93-.058 2.004.74 2.763a9.942 9.942 0 0 1-2.306 2.307c-.76-.798-1.834-1.125-2.764-.74-.93.385-1.457 1.376-1.43 2.477a9.942 9.942 0 0 1-3.262 0c.027-1.102-.501-2.092-1.43-2.477-.93-.385-2.004-.058-2.763.74a9.942 9.942 0 0 1-2.307-2.306c.798-.76 1.125-1.834.74-2.764-.385-.93-1.376-1.457-2.477-1.43zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+            </g>
+          </svg>
+        </div>
+        <div class="menu__item-button" data-link="settings">Settings</div>
+      </div>
+      <div class="menu__item">
+        <div class="menu__item-image">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <title />
+            <g id="star">
+              <path fill="transparent" stroke="black" stroke-width="2"
+                d="M29.82,12.76a2,2,0,0,0-1.59-1.35L21,10.31,17.81,3.5a2,2,0,0,0-3.62,0L11,10.31l-7.23,1.1a2,2,0,0,0-1.13,3.38l5.29,5.42-1.24,7.6a2,2,0,0,0,2,2.32,2,2,0,0,0,1-.25L16,26.36l6.37,3.52a2,2,0,0,0,2.94-2.07l-1.24-7.6,5.29-5.42A2,2,0,0,0,29.82,12.76Z" />
+            </g>
+          </svg>
+        </div>
+        <div class="menu__item-button" data-link="score">Score</div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer__github">
+        <a href="https://github.com/doragrishaeva" class="footer__github-link" target="_blank"></a>
+      </div>
+      <div class="footer__year"><b>2022</b></div>
+      <div class="footer__logo">
+        <a href="https://rs.school/js-stage0/" class="footer__logo-link" target="_blank"></a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- game screen -->
+  <div class="game screen">
+    <div class="back" title="return to menu">
+      <?xml version="1.0" ?><svg enable-background="new 0 0 32 32" id="Glyph" version="1.1" viewBox="0 0 32 32"
+        xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <path fill="transparent" stroke="black"
+          d="M30.854,16.548C30.523,17.43,29.703,18,28.764,18H28v11c0,0.552-0.448,1-1,1h-6v-7c0-2.757-2.243-5-5-5  s-5,2.243-5,5v7H5c-0.552,0-1-0.448-1-1V18H3.235c-0.939,0-1.759-0.569-2.09-1.451c-0.331-0.882-0.088-1.852,0.62-2.47L13.444,3.019  c1.434-1.357,3.679-1.357,5.112,0l11.707,11.086C30.941,14.696,31.185,15.666,30.854,16.548z"
+          id="XMLID_219_" />
+      </svg>
+    </div>
+
+    <div class="game-content">
+      <div class="info">
+        <span class="info__level">
+          Difficulty:
+        </span>
+        <span class="info__moves">
+          Moves:
+          <span class="info__moves-value"></span>
+        </span>
+      </div>
+      <div class="game-grid"></div>
+    </div>
+
+  </div>
+
+  <!-- settings screen -->
+  <div class="settings screen">
+    <div class="back" title="return to menu">
+      <?xml version="1.0" ?><svg enable-background="new 0 0 32 32" id="Glyph" version="1.1" viewBox="0 0 32 32"
+        xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <path fill="transparent" stroke="black"
+          d="M30.854,16.548C30.523,17.43,29.703,18,28.764,18H28v11c0,0.552-0.448,1-1,1h-6v-7c0-2.757-2.243-5-5-5  s-5,2.243-5,5v7H5c-0.552,0-1-0.448-1-1V18H3.235c-0.939,0-1.759-0.569-2.09-1.451c-0.331-0.882-0.088-1.852,0.62-2.47L13.444,3.019  c1.434-1.357,3.679-1.357,5.112,0l11.707,11.086C30.941,14.696,31.185,15.666,30.854,16.548z"
+          id="XMLID_219_" />
+      </svg>
+    </div>
+
+    <div class="settings-menu">
+      <div class="settings-menu__item">
+        <div class="settings-menu__item-label">Name:</div>
+        <div class="settings-menu__item-value">
+          <input class="settings-menu__item-input" />
+        </div>
+      </div>
+      <div class="settings-menu__item">
+        <div class="settings-menu__item-label">Difficulty:</div>
+        <div class="settings-menu__item-value">
+          <div class="settings-menu__item-level" data-level="1">
+            <?xml version="1.0" ?><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <title />
+              <g id="star">
+                <path fill="transparent" stroke="black"
+                  d="M29.82,12.76a2,2,0,0,0-1.59-1.35L21,10.31,17.81,3.5a2,2,0,0,0-3.62,0L11,10.31l-7.23,1.1a2,2,0,0,0-1.13,3.38l5.29,5.42-1.24,7.6a2,2,0,0,0,2,2.32,2,2,0,0,0,1-.25L16,26.36l6.37,3.52a2,2,0,0,0,2.94-2.07l-1.24-7.6,5.29-5.42A2,2,0,0,0,29.82,12.76Z" />
+              </g>
+            </svg>
+          </div>
+          <div class="settings-menu__item-level" data-level="2">
+            <?xml version="1.0" ?><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <title />
+              <g id="star">
+                <path fill="transparent" stroke="black"
+                  d="M29.82,12.76a2,2,0,0,0-1.59-1.35L21,10.31,17.81,3.5a2,2,0,0,0-3.62,0L11,10.31l-7.23,1.1a2,2,0,0,0-1.13,3.38l5.29,5.42-1.24,7.6a2,2,0,0,0,2,2.32,2,2,0,0,0,1-.25L16,26.36l6.37,3.52a2,2,0,0,0,2.94-2.07l-1.24-7.6,5.29-5.42A2,2,0,0,0,29.82,12.76Z" />
+              </g>
+            </svg>
+          </div>
+          <div class="settings-menu__item-level" data-level="3">
+            <?xml version="1.0" ?><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <title />
+              <g id="star">
+                <path fill="transparent" stroke="black"
+                  d="M29.82,12.76a2,2,0,0,0-1.59-1.35L21,10.31,17.81,3.5a2,2,0,0,0-3.62,0L11,10.31l-7.23,1.1a2,2,0,0,0-1.13,3.38l5.29,5.42-1.24,7.6a2,2,0,0,0,2,2.32,2,2,0,0,0,1-.25L16,26.36l6.37,3.52a2,2,0,0,0,2.94-2.07l-1.24-7.6,5.29-5.42A2,2,0,0,0,29.82,12.76Z" />
+              </g>
+            </svg>
+          </div>
+          <div class="settings-menu__item-level" data-level="4">
+            <?xml version="1.0" ?><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <title />
+              <g id="star">
+                <path fill="transparent" stroke="black"
+                  d="M29.82,12.76a2,2,0,0,0-1.59-1.35L21,10.31,17.81,3.5a2,2,0,0,0-3.62,0L11,10.31l-7.23,1.1a2,2,0,0,0-1.13,3.38l5.29,5.42-1.24,7.6a2,2,0,0,0,2,2.32,2,2,0,0,0,1-.25L16,26.36l6.37,3.52a2,2,0,0,0,2.94-2.07l-1.24-7.6,5.29-5.42A2,2,0,0,0,29.82,12.76Z" />
+              </g>
+            </svg>
+          </div>
+          <div class="settings-menu__item-level" data-level="5">
+            <?xml version="1.0" ?><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <title />
+              <g id="star">
+                <path fill="transparent" stroke="black"
+                  d="M29.82,12.76a2,2,0,0,0-1.59-1.35L21,10.31,17.81,3.5a2,2,0,0,0-3.62,0L11,10.31l-7.23,1.1a2,2,0,0,0-1.13,3.38l5.29,5.42-1.24,7.6a2,2,0,0,0,2,2.32,2,2,0,0,0,1-.25L16,26.36l6.37,3.52a2,2,0,0,0,2.94-2.07l-1.24-7.6,5.29-5.42A2,2,0,0,0,29.82,12.76Z" />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="settings-menu__item">
+        <div class="settings-menu__item-label">Theme:</div>
+        <div class="settings-menu__item-value">
+          <div class="settings-menu__item-theme" data-theme="crime">
+            <div class="theme-button"></div>
+            <div class="theme-value">Crime</div>
+          </div>
+          <div class="settings-menu__item-theme" data-theme="food">
+            <div class="theme-button"></div>
+            <div class="theme-value">Food</div>
+          </div>
+          <div class="settings-menu__item-theme" data-theme="health">
+            <div class="theme-button"></div>
+            <div class="theme-value">Health</div>
+          </div>
+          <div class="settings-menu__item-theme" data-theme="nature">
+            <div class="theme-button"></div>
+            <div class="theme-value">Nature</div>
+          </div>
+          <div class="settings-menu__item-theme" data-theme="school">
+            <div class="theme-button"></div>
+            <div class="theme-value">School</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- score screen -->
+  <div class="score screen">
+    <div class="back" title="return to menu">
+      <?xml version="1.0" ?><svg enable-background="new 0 0 32 32" id="Glyph" version="1.1" viewBox="0 0 32 32"
+        xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <path fill="transparent" stroke="black"
+          d="M30.854,16.548C30.523,17.43,29.703,18,28.764,18H28v11c0,0.552-0.448,1-1,1h-6v-7c0-2.757-2.243-5-5-5  s-5,2.243-5,5v7H5c-0.552,0-1-0.448-1-1V18H3.235c-0.939,0-1.759-0.569-2.09-1.451c-0.331-0.882-0.088-1.852,0.62-2.47L13.444,3.019  c1.434-1.357,3.679-1.357,5.112,0l11.707,11.086C30.941,14.696,31.185,15.666,30.854,16.548z"
+          id="XMLID_219_" />
+      </svg>
+    </div>
+
+    <div class="score-content">
+      <div class="type-score">Latest results</div>
+
+      <div class="score-table">
+        <div class="score-table__header">
+          <div class="score-table__header-point">Name</div>
+          <div class="score-table__header-point">Moves</div>
+          <div class="score-table__header-point">Additional info</div>
+        </div>
+        <div class="score-table__body"></div>
+      </div>
+    </div>
+
+    <div class="empty-score">
+      No results yet...
+      </br>
+      Play game and your results will be saved here
+    </div>
+  </div>
+
+  <!-- modal name -->
+  <div class="modal">
+    <div class="modal-name">
+      <div class="modal-name__title">
+        Enter your name:
+        <input class="modal-name__input"/>
+      </div>
+      <div class="modal-name__button">Start</div>
+    </div>
+  </div>
+
+  <!-- modal game over -->
+  <div class="modal">
+    <div class="modal-end">
+      <div class="modal-end__title">Woo-hoo! Congratulations!</div>
+      <div class="modal-end__result"></div>
+      <div class="modal-end__controls">
+        <button class="modal-end__play">Play again</button>
+        <button class="modal-end__quit">Quit</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+.footer {
+  position: absolute;
+  bottom: 30px;
+  left: 44vw;
+  display: flex;
+  height: 50px;
+  margin: 0 auto;
+  width: 250px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__github-link {
+  width: 32px;
+  height: 32px;
+  display: block;
+  background: url('../assets/github.svg');
+  cursor: pointer;
+}
+
+.footer__logo-link {
+  width: 120px;
+  height: 32px;
+  display: block;
+  background: url('../assets/school-logo.svg') center no-repeat;
+  cursor: pointer;
+}

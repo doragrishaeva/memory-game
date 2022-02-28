@@ -1,0 +1,625 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #ABD9BA;
+  font-family: "Indie Flower", "Amatic SC", cursive;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.screen {
+  height: 100vh;
+  width: 100vw;
+}
+
+.back {
+  position: absolute;
+  top: 45px;
+  right: 55px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+.back:hover svg path {
+  transition: all 0.3s linear;
+  fill: #000000;
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.game-content {
+  margin: auto 0;
+  height: 100%;
+  width: 800px;
+  position: relative;
+  top: 10vh;
+  left: 15vw;
+}
+@media (max-width: 1550px) {
+  .game-content {
+    top: 8vh;
+    left: 15vw;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  position: relative;
+}
+.info:first-child {
+  margin-right: 10px;
+}
+
+.info-1 {
+  top: 10vh;
+  left: 20.5vw;
+}
+@media (max-width: 1550px) {
+  .info-1 {
+    top: 10vh;
+    left: 18.5vw;
+  }
+}
+
+.info-2 {
+  top: 10vh;
+  left: 16.5vw;
+}
+@media (max-width: 1550px) {
+  .info-2 {
+    top: 5vh;
+    left: 10.5vw;
+  }
+}
+
+.info-3 {
+  top: 0vh;
+  left: 15vw;
+}
+@media (max-width: 1550px) {
+  .info-3 {
+    top: 1vh;
+    left: 0vw;
+  }
+}
+
+.info-4 {
+  top: 0vh;
+  left: 9.5vw;
+}
+@media (max-width: 1550px) {
+  .info-4 {
+    top: 3vh;
+    left: -3vw;
+  }
+}
+
+.info-5 {
+  top: 0h;
+  left: 6.5vw;
+}
+@media (max-width: 1550px) {
+  .info-5 {
+    top: 3vh;
+    left: -11vw;
+  }
+}
+
+.info__level-value {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 5px;
+  background-image: url("../assets/level-icon-filled.svg");
+}
+
+.settings-menu {
+  width: 380px;
+  margin: 25vh auto 0;
+}
+
+.settings-menu__item {
+  font-size: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.settings-menu__item-input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px dashed #000000;
+  font-size: 30px;
+  font-family: "Indie Flower", "Amatic SC", cursive;
+  margin-left: 20px;
+  width: 190px;
+}
+
+.settings-menu__item-level {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.settings-menu__item-level svg path {
+  transition: 400ms;
+}
+.settings-menu__item-level:hover > svg path {
+  fill: #000000;
+}
+
+.settings-menu__item-level_active {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.settings-menu__item-level_active svg path {
+  transition: 400ms;
+  fill: #000000;
+}
+
+.settings-menu__item-theme {
+  display: flex;
+  align-items: center;
+}
+
+.theme-button {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000000;
+  border-radius: 25px;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: all 400ms;
+  position: relative;
+}
+.theme-button::before {
+  position: absolute;
+  content: "";
+  width: 16px;
+  height: 16px;
+  display: block;
+  background-color: transparent;
+  border-radius: 25px;
+  top: 2px;
+  left: 2px;
+  transition: background-color 400ms;
+}
+.theme-button:hover::before {
+  position: absolute;
+  content: "";
+  width: 16px;
+  height: 16px;
+  display: block;
+  background-color: #000000;
+  border-radius: 25px;
+  top: 2px;
+  left: 2px;
+}
+
+.theme-button_active::before {
+  position: absolute;
+  content: "";
+  width: 16px;
+  height: 16px;
+  display: block;
+  background-color: #000000;
+  border-radius: 25px;
+  top: 2px;
+  left: 2px;
+}
+
+.settings-menu__item:last-of-type .settings-menu__item-value {
+  margin-right: 70px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 30px;
+  left: 44vw;
+  display: flex;
+  height: 50px;
+  margin: 0 auto;
+  width: 250px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__github-link {
+  width: 32px;
+  height: 32px;
+  display: block;
+  background: url("../assets/github.svg");
+  cursor: pointer;
+}
+
+.footer__logo-link {
+  width: 120px;
+  height: 32px;
+  display: block;
+  background: url("../assets/school-logo.svg") center no-repeat;
+  cursor: pointer;
+}
+
+.menu {
+  width: 400px;
+  margin: 30vh auto 0;
+}
+
+.menu__item {
+  cursor: pointer;
+  font-size: 50px;
+  margin-bottom: 25px;
+  margin-left: 95px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s linear;
+}
+.menu__item .menu__item-image svg {
+  margin-bottom: 13px;
+}
+.menu__item:hover .menu__item-image svg path:last-of-type {
+  fill: #000000;
+  transition: all 0.3s linear;
+}
+
+.menu__item-button {
+  border-bottom: 2px dashed transparent;
+  transition: all 0.3s linear;
+}
+
+.menu__item-image {
+  cursor: auto;
+  width: 35px;
+  height: 40px;
+  display: inline-block;
+  margin-right: 35px;
+}
+
+.modal-name {
+  margin: 30vh auto 0;
+  flex-direction: column;
+  border: 2px solid #000000;
+  border-radius: 25px;
+  width: 450px;
+  height: 200px;
+  padding: 50px;
+  position: relative;
+  background-image: url("../assets/modal-name-icon.svg");
+  background-repeat: no-repeat;
+}
+.modal-name .modal-name__title {
+  font-size: 30px;
+  margin-left: 180px;
+}
+.modal-name .modal-name__input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px dashed #000000;
+  font-size: 30px;
+  font-family: "Indie Flower", "Amatic SC", cursive;
+}
+
+.modal-name__button {
+  position: absolute;
+  cursor: pointer;
+  font-size: 30px;
+  bottom: 45px;
+  left: 50%;
+  border: 2px solid #000000;
+  border-radius: 25px;
+  padding: 0 25px;
+}
+
+.modal-end {
+  margin: 10vh auto 0;
+  flex-direction: column;
+  width: 450px;
+  height: 500px;
+  padding: 50px;
+  position: relative;
+  background-image: url("../assets/congratulations-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.modal-end__controls {
+  position: absolute;
+  bottom: 30px;
+  left: 15%;
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-end__play, .modal-end__quit {
+  background: none;
+  border: none;
+  font-size: 30px;
+  font-family: "Indie Flower", "Amatic SC", cursive;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  border-bottom: 1px solid transparent;
+}
+.modal-end__play:hover, .modal-end__quit:hover {
+  border-bottom: 1px dashed #000000;
+}
+
+.modal-end__title {
+  font-size: 30px;
+  text-align: center;
+}
+
+.modal-end__result {
+  font-size: 30px;
+  text-align: center;
+}
+
+.score-content {
+  margin: 100px auto 0;
+  width: 800px;
+}
+@media (max-width: 1550px) {
+  .score-content {
+    margin: 30px auto;
+  }
+}
+
+.type-score {
+  font-size: 30px;
+  border-bottom: 1px dashed #000000;
+  display: inline-block;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+@media (max-width: 1550px) {
+  .type-score {
+    position: absolute;
+    left: 50px;
+    top: 30px;
+  }
+}
+
+.score-table {
+  width: 700px;
+}
+
+.score-table__header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  border-bottom: 2px solid #000000;
+}
+
+.score-table__header-point {
+  padding: 5px 50px;
+}
+.score-table__header-point:nth-of-type(2) {
+  border-right: 2px solid #000000;
+  border-left: 2px solid #000000;
+}
+
+.score-table__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.score-table__body-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  border-bottom: 1px solid #000000;
+}
+
+.score-table__body-point {
+  padding: 5px 50px;
+}
+.score-table__body-point:first-of-type {
+  flex: 30%;
+  padding-left: 15px;
+}
+.score-table__body-point:nth-of-type(2) {
+  font-weight: bold;
+  padding-right: 110px;
+}
+.score-table__body-point:last-of-type {
+  font-size: 18px;
+  padding: 5px 0px 5px 50px;
+  flex-basis: 45%;
+}
+
+.score-content_active {
+  display: block;
+}
+
+.score-content_hidden {
+  display: none;
+}
+
+.additional-info-label {
+  margin-right: 10px;
+}
+
+.profile {
+  position: absolute;
+  top: 45px;
+  right: 55px;
+  font-size: 30px;
+}
+.profile::after {
+  background: url("../assets/profile-icon.svg") no-repeat;
+  height: 50px;
+  width: 50px;
+  content: "";
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 15px;
+}
+
+.game-grid {
+  display: grid;
+  position: relative;
+}
+
+.grid-1 {
+  grid-template-columns: repeat(4, 100px);
+  gap: 20px;
+  top: 10vh;
+  left: 20vw;
+}
+@media (max-width: 1550px) {
+  .grid-1 {
+    top: 10vh;
+    left: 18vw;
+  }
+}
+
+.grid-2 {
+  grid-template-columns: repeat(6, 100px);
+  gap: 20px;
+  top: 10vh;
+  left: 16vw;
+}
+@media (max-width: 1550px) {
+  .grid-2 {
+    top: 5vh;
+    left: 10vw;
+  }
+}
+
+.grid-3 {
+  grid-template-columns: repeat(6, 100px);
+  gap: 20px;
+  top: 0vh;
+  left: 15vw;
+}
+.grid-3 .game-grid__item {
+  height: 100px;
+}
+@media (max-width: 1550px) {
+  .grid-3 {
+    grid-template-columns: repeat(6, 85px);
+    gap: 18px;
+    top: -10vh;
+    left: 15vw;
+  }
+  .grid-3 .game-grid__item {
+    height: 85px;
+  }
+}
+
+.grid-4 {
+  grid-template-columns: repeat(8, 100px);
+  gap: 20px;
+  top: 0vh;
+  left: 9vw;
+}
+.grid-4 .game-grid__item {
+  height: 100px;
+}
+@media (max-width: 1550px) {
+  .grid-4 {
+    grid-template-columns: repeat(8, 80px);
+    gap: 15px;
+    top: -8vh;
+    left: 10vw;
+  }
+  .grid-4 .game-grid__item {
+    height: 80px;
+  }
+}
+
+.grid-5 {
+  grid-template-columns: repeat(10, 90px);
+  gap: 20px;
+  top: 0vh;
+  left: 6vw;
+}
+.grid-5 .game-grid__item {
+  height: 90px;
+}
+@media (max-width: 1550px) {
+  .grid-5 {
+    grid-template-columns: repeat(10, 80px);
+    gap: 17px;
+    top: -8vh;
+    left: 3vw;
+  }
+  .grid-5 .game-grid__item {
+    height: 80px;
+  }
+}
+
+.game-grid__item {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #000000;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
+  border-radius: 50px;
+  box-shadow: 10px 5px 5px #000000;
+}
+
+.game-grid__item_hidden {
+  background-color: #EDEF6E;
+  background-image: url("../assets/cover.svg");
+  transform: rotateY(360deg);
+  transition: transform 400ms;
+}
+
+.game-grid__item_active {
+  transform: rotateY(180deg);
+  transition: transform 400ms;
+  box-shadow: -10px 5px 5px #000000;
+}
+
+.game-grid__item_success {
+  visibility: hidden;
+}
+
+.game-grid__item_disabled {
+  pointer-events: none;
+}
+
+.empty-score {
+  margin: 470px auto 0;
+  width: 500px;
+  text-align: center;
+  font-size: 25px;
+  position: relative;
+}
+.empty-score::before {
+  content: "";
+  background: url("../assets/empty-score-icon.svg") no-repeat;
+  width: 200px;
+  height: 270px;
+  display: block;
+  position: absolute;
+  top: -330px;
+  left: 130px;
+}
+
+.empty-score_hidden {
+  display: none;
+}
+
+.empty-score_active {
+  display: block;
+}
+
+/*# sourceMappingURL=style.css.map */

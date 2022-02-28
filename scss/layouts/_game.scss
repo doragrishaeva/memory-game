@@ -1,0 +1,79 @@
+.game-content {
+  margin: auto 0;
+    height: 100%;
+    width: 800px;
+    position: relative;
+    top: 10vh;
+    left: 15vw;
+
+    @include media-laptop {
+      top: 8vh;
+      left: 15vw;
+    }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  position: relative;
+
+  &:first-child {
+    margin-right: 10px;
+  }
+}
+
+.info-1 {
+  top: 10vh;
+  left: 20.5vw;
+  @include media-laptop {
+    top: 10vh;
+    left: 18.5vw;
+  }
+}
+
+.info-2 {
+  top: 10vh;
+  left: 16.5vw;
+  @include media-laptop {
+    top: 5vh;
+    left: 10.5vw;
+  }
+}
+
+.info-3 {
+  top: 0vh;
+  left: 15vw;
+  @include media-laptop {
+    top: 1vh;
+    left: 0vw;
+  }
+}
+
+.info-4 {
+  top: 0vh;
+  left: 9.5vw;
+  @include media-laptop {
+    top: 3vh;
+    left: -3vw;
+  }
+}
+
+.info-5 {
+  top: 0h;
+  left: 6.5vw;
+  @include media-laptop {
+    top: 3vh;
+    left: -11vw;
+  }
+}
+
+.info__level-value {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 5px;
+  background-image: url('../assets/level-icon-filled.svg');
+}

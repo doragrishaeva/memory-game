@@ -1,0 +1,124 @@
+.game-grid {
+  display: grid;
+  position: relative;
+}
+
+.grid-1 {
+  grid-template-columns: repeat(4, 100px);
+  gap: 20px;
+  top: 10vh;
+  left: 20vw;
+  @include media-laptop {
+    top: 10vh;
+    left: 18vw;
+  }
+}
+
+.grid-2 {
+  grid-template-columns: repeat(6, 100px);
+  gap: 20px;
+  top: 10vh;
+  left: 16vw;
+  @include media-laptop {
+    top: 5vh;
+    left: 10vw;
+  }
+}
+
+.grid-3 {
+  grid-template-columns: repeat(6, 100px);
+  gap: 20px;
+  top: 0vh;
+  left: 15vw;
+
+  .game-grid__item {
+    height: 100px;
+  }
+  @include media-laptop {
+    grid-template-columns: repeat(6, 85px);
+    gap: 18px;
+    top: -10vh;
+    left: 15vw;
+
+    .game-grid__item {
+      height: 85px;
+    }
+  }
+}
+
+.grid-4 {
+  grid-template-columns: repeat(8, 100px);
+  gap: 20px;
+  top: 0vh;
+  left: 9vw;
+
+  .game-grid__item {
+    height: 100px;
+  }
+
+  @include media-laptop {
+    grid-template-columns: repeat(8, 80px);
+    gap: 15px;
+    top: -8vh;
+    left: 10vw;
+
+    .game-grid__item {
+      height: 80px;
+    }
+  }
+}
+
+.grid-5 {
+  grid-template-columns: repeat(10, 90px);
+  gap: 20px;
+  top: 0vh;
+  left: 6vw;
+
+  .game-grid__item {
+    height: 90px;
+  }
+
+  @include media-laptop {
+    grid-template-columns: repeat(10, 80px);
+    gap: 17px;
+    top: -8vh;
+    left: 3vw;
+
+    .game-grid__item {
+      height: 80px;
+    }
+  }
+}
+
+.game-grid__item {
+  width: 100%;
+  height: 100px;
+  border: 1px solid $text-color;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
+  border-radius: 50px;
+  box-shadow: 10px 5px 5px $text-color;
+}
+
+.game-grid__item_hidden {
+  background-color: $card-color;
+  background-image: url('../assets/cover.svg');
+  transform: rotateY(360deg);
+  transition: transform 400ms;
+}
+
+.game-grid__item_active {
+  transform: rotateY(180deg);
+  transition: transform 400ms;
+  box-shadow: -10px 5px 5px $text-color;
+}
+
+.game-grid__item_success {
+  visibility: hidden;
+}
+
+.game-grid__item_disabled {
+  pointer-events: none;
+}

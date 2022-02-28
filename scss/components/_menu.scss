@@ -1,0 +1,46 @@
+.menu {
+  width: 400px;
+  margin: 30vh auto 0;
+}
+
+.menu__item {
+  cursor: pointer;
+  font-size: 50px;
+  margin-bottom: 25px;
+  margin-left: 95px;
+  display: flex;
+  align-items: center;
+  transition: $main-transition;
+
+  .menu__item-image {
+    svg {
+      margin-bottom: 13px;
+    }
+  }
+
+  &:hover {
+    .menu__item-image {
+      svg {
+        path {
+          &:last-of-type {
+            fill: $text-color;
+            transition: $main-transition;
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu__item-button {
+  border-bottom: 2px dashed transparent;
+  transition: $main-transition;
+}
+
+.menu__item-image {
+  cursor: auto;
+  width: 35px;
+  height: 40px;
+  display: inline-block;
+  margin-right: 35px;
+}

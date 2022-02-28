@@ -1,0 +1,37 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $bg-color;
+  font-family: 'Indie Flower', 'Amatic SC', cursive;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.screen {
+  height: 100vh;
+  width: 100vw;
+}
+
+.back {
+  position: absolute;
+  top: 45px;
+  right: 55px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+
+  &:hover {
+    svg path {
+      transition: $main-transition;
+      fill: $text-color;
+    }
+  }
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}

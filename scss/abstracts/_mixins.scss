@@ -1,0 +1,7 @@
+@mixin media-big-screen {
+  @media (max-width: $big-screen) { @content; }
+}
+
+@mixin media-laptop {
+  @media (max-width: $laptop-screen) { @content; }
+}

@@ -1,0 +1,92 @@
+// .modal {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   right: 0;
+//   z-index: 1050;
+//   background: rgba(0,0,0,0.5);
+// }
+
+.modal-name {
+  margin: 30vh auto 0;
+  flex-direction: column;
+  border: 2px solid $text-color;
+  border-radius: 25px;
+  width: 450px;
+  height: 200px;
+  padding: 50px;
+  position: relative;
+  background-image: url('../assets/modal-name-icon.svg');
+  background-repeat: no-repeat;
+
+  .modal-name__title {
+    font-size: 30px;
+    margin-left: 180px;
+  }
+
+  .modal-name__input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px dashed $text-color;
+    font-size: 30px;
+    font-family: 'Indie Flower', 'Amatic SC', cursive;
+  }
+}
+
+.modal-name__button {
+  position: absolute;
+  cursor: pointer;
+  font-size: 30px;
+  bottom: 45px;
+  left: 50%;
+  border: 2px solid $text-color;
+  border-radius: 25px;
+  padding: 0 25px;
+}
+
+.modal-end {
+  margin: 10vh auto 0;
+  flex-direction: column;
+  width: 450px;
+  height: 500px;
+  padding: 50px;
+  position: relative;
+  background-image: url('../assets/congratulations-icon.svg');
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.modal-end__controls {
+  position: absolute;
+  bottom: 30px;
+  left: 15%;
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-end__play, .modal-end__quit {
+  background: none;
+  border: none;
+  font-size: 30px;
+  font-family: 'Indie Flower', 'Amatic SC', cursive;
+  cursor: pointer;
+  transition: $main-transition;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    border-bottom: 1px dashed $text-color;
+  }
+}
+
+.modal-end__title {
+  font-size: 30px;
+  text-align: center;
+}
+
+.modal-end__result {
+  font-size: 30px;
+  text-align: center;
+}
